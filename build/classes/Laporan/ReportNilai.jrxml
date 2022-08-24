@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="700e139c-9fe7-461e-9b16-8eabc940453a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<style name="Heading 2" fontName="Arial" fontSize="24" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Field Table" mode="Transparent" hAlign="Center" vAlign="Middle" fontName="Arial" fontSize="11" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     nilai.`nis` AS nilai_nis,
+     nilai.`kd_kelas` AS nilai_kd_kelas,
+     nilai.`kd_mapel` AS nilai_kd_mapel,
+     nilai.`tugas_harian` AS nilai_tugas_harian,
+     nilai.`uts` AS nilai_uts,
+     nilai.`uas` AS nilai_uas,
+     nilai.`nilai_akhir` AS nilai_nilai_akhir,
+     nilai.`keterangan` AS nilai_keterangan,
+     siswa.`nis` AS siswa_nis,
+     siswa.`nama` AS siswa_nama,
+     siswa.`tmp_lahir` AS siswa_tmp_lahir,
+     siswa.`tgl_lahir` AS siswa_tgl_lahir,
+     siswa.`kelas` AS siswa_kelas,
+     siswa.`agama` AS siswa_agama,
+     siswa.`jenis_kel` AS siswa_jenis_kel,
+     siswa.`nama_wali` AS siswa_nama_wali,
+     siswa.`jenis_kel_wali` AS siswa_jenis_kel_wali,
+     siswa.`no_telp_wali` AS siswa_no_telp_wali,
+     siswa.`alamat_wali` AS siswa_alamat_wali,
+     pelajaran.`kd_mapel` AS pelajaran_kd_mapel,
+     pelajaran.`mapel` AS pelajaran_mapel,
+     absen.`wali_kelas_nip` AS absen_wali_kelas_nip,
+     absen.`kd_kelas` AS absen_kd_kelas,
+     absen.`absen` AS absen_absen,
+     absen.`tidak_absen` AS absen_tidak_absen,
+     absen.`izin_sakit` AS absen_izin_sakit,
+     absen.`total_siswa` AS absen_total_siswa
+FROM
+     `siswa` siswa INNER JOIN `nilai` nilai ON siswa.`nis` = nilai.`nis`
+     INNER JOIN `pelajaran` pelajaran ON nilai.`kd_mapel` = pelajaran.`kd_mapel`
+     INNER JOIN `absen` absen ON nilai.`kd_kelas` = absen.`kd_kelas`]]>
+	</queryString>
+	<field name="nilai_nis" class="java.lang.String"/>
+	<field name="nilai_kd_kelas" class="java.lang.String"/>
+	<field name="nilai_kd_mapel" class="java.lang.String"/>
+	<field name="nilai_tugas_harian" class="java.lang.Integer"/>
+	<field name="nilai_uts" class="java.lang.Integer"/>
+	<field name="nilai_uas" class="java.lang.Integer"/>
+	<field name="nilai_nilai_akhir" class="java.lang.Double"/>
+	<field name="nilai_keterangan" class="java.lang.String"/>
+	<field name="siswa_nis" class="java.lang.String"/>
+	<field name="siswa_nama" class="java.lang.String"/>
+	<field name="siswa_tmp_lahir" class="java.lang.String"/>
+	<field name="siswa_tgl_lahir" class="java.lang.String"/>
+	<field name="siswa_kelas" class="java.lang.String"/>
+	<field name="siswa_agama" class="java.lang.String"/>
+	<field name="siswa_jenis_kel" class="java.lang.String"/>
+	<field name="siswa_nama_wali" class="java.lang.String"/>
+	<field name="siswa_jenis_kel_wali" class="java.lang.String"/>
+	<field name="siswa_no_telp_wali" class="java.lang.String"/>
+	<field name="siswa_alamat_wali" class="java.lang.String"/>
+	<field name="pelajaran_kd_mapel" class="java.lang.String"/>
+	<field name="pelajaran_mapel" class="java.lang.String"/>
+	<field name="absen_wali_kelas_nip" class="java.lang.String"/>
+	<field name="absen_kd_kelas" class="java.lang.String"/>
+	<field name="absen_absen" class="java.lang.String"/>
+	<field name="absen_tidak_absen" class="java.lang.String"/>
+	<field name="absen_izin_sakit" class="java.lang.String"/>
+	<field name="absen_total_siswa" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement style="Heading 1" mode="Transparent" x="0" y="14" width="324" height="40" uuid="b4774a8a-e4e6-4c31-8ec3-8d7441a758c6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="26" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA NILAI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement style="Heading 2" x="113" y="0" width="244" height="39" uuid="855a43ea-7693-4b0d-ad24-bc1c9574bd6b"/>
+				<textElement>
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SDIT Islam Nur Muria]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="0" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="5203bbbe-cdea-4402-8de9-f75096c6b765"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Siswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="72" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="3c4b1c11-d1e9-4701-9a60-c07669bfc5ac"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="144" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="6e38c923-9d8e-44ba-abce-d3a6a8af7a22"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="216" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="37e81d5c-195d-4188-987e-6c6cd5a57d1c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="288" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="e3df50fb-d4d9-480b-b7ee-96440d90eb7c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Mata Pelajaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="360" y="0" width="82" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="daa36a10-e8cb-4cf8-9498-b155fbd49c2e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mata Pelajaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="442" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="cdd18414-adbd-4477-ae2c-c9e7dc521348"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tugas Harian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="514" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="4b825b28-0caf-463b-bc48-371cd3549133"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="586" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="1141a546-b066-4c6a-8dd7-b257d4c0f3a4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="658" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="2ed54a9e-7e00-42bf-8f36-ec17ffa8db4b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai Akhir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="730" y="0" width="72" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="e045064a-1fa9-45cc-b96f-429ecb80ee85"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="21" width="802" height="1" uuid="34f11b13-6ded-41f5-baed-67bfa47df464"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="72" height="20" uuid="b2630b6a-b6fc-407b-bf14-db8d4e14e5a5"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="0" width="72" height="20" uuid="3da39762-b098-4682-86ce-caf0c63737b0"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nilai_nis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="72" height="20" uuid="9d74e969-819a-455c-a329-67a8546e5de5"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nilai_kd_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="72" height="20" uuid="236c6677-b7fc-45d5-9597-64596d14bbff"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{siswa_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="72" height="20" uuid="c4209bcd-1141-4a3c-8aa8-cae04e7e8706"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nilai_kd_mapel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="82" height="20" uuid="3fce5b1d-19d1-4382-9691-9d20a4d38cb7"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pelajaran_mapel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="0" width="72" height="20" uuid="afc8bb7a-1608-4529-a7b2-58ec381c1ce0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_tugas_harian}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="514" y="0" width="72" height="20" uuid="f0075f2a-8e72-429c-846f-1ddd541d695c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_uts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="586" y="0" width="72" height="20" uuid="77295b06-9834-4944-a0dd-67bf1a648d0a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_uas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="658" y="0" width="72" height="20" uuid="08df63f1-23f8-46c2-801a-617d3fe46411"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_nilai_akhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="72" height="20" uuid="50889cd1-da6e-4edc-829e-07f5730a8ad1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_keterangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="34" width="213" height="20" uuid="2f32ac85-d487-4880-bc80-5dc4b8b20fb1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="34" width="43" height="20" uuid="5f5b7bd8-af6e-4202-aae5-3856ebf65402"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
