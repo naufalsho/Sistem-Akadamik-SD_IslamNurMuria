@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="700e139c-9fe7-461e-9b16-8eabc940453a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="4"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<style name="Heading 2" fontName="Arial" fontSize="24" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Field Table" mode="Transparent" hAlign="Center" vAlign="Middle" fontName="Arial" fontSize="11" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     absen.`wali_kelas_nip` AS absen_wali_kelas_nip,
+     absen.`kd_kelas` AS absen_kd_kelas,
+     absen.`absen` AS absen_absen,
+     absen.`tidak_absen` AS absen_tidak_absen,
+     absen.`izin_sakit` AS absen_izin_sakit,
+     absen.`total_siswa` AS absen_total_siswa,
+     kelas.`kd_kelas` AS kelas_kd_kelas,
+     kelas.`kelas` AS kelas_kelas,
+     guru.`nama` AS guru_nama,
+     guru.`nip` AS guru_nip,
+     guru.`email` AS guru_email,
+     guru.`no_hp` AS guru_no_hp,
+     guru.`alamat` AS guru_alamat,
+     guru.`jenis_kel` AS guru_jenis_kel,
+     guru.`tgl_lahir` AS guru_tgl_lahir,
+     guru.`tmp_lahir` AS guru_tmp_lahir
+FROM
+     `absen` absen INNER JOIN `kelas` kelas ON absen.`kd_kelas` = kelas.`kd_kelas`
+     INNER JOIN `guru` guru ON absen.`wali_kelas_nip` = guru.`nip`]]>
+	</queryString>
+	<field name="absen_wali_kelas_nip" class="java.lang.String"/>
+	<field name="absen_kd_kelas" class="java.lang.String"/>
+	<field name="absen_absen" class="java.lang.String"/>
+	<field name="absen_tidak_absen" class="java.lang.String"/>
+	<field name="absen_izin_sakit" class="java.lang.String"/>
+	<field name="absen_total_siswa" class="java.lang.String"/>
+	<field name="kelas_kd_kelas" class="java.lang.String"/>
+	<field name="kelas_kelas" class="java.lang.String"/>
+	<field name="guru_nama" class="java.lang.String"/>
+	<field name="guru_nip" class="java.lang.String"/>
+	<field name="guru_email" class="java.lang.String"/>
+	<field name="guru_no_hp" class="java.lang.String"/>
+	<field name="guru_alamat" class="java.lang.String"/>
+	<field name="guru_jenis_kel" class="java.lang.String"/>
+	<field name="guru_tgl_lahir" class="java.lang.String"/>
+	<field name="guru_tmp_lahir" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement style="Heading 1" mode="Transparent" x="0" y="14" width="324" height="40" uuid="b4774a8a-e4e6-4c31-8ec3-8d7441a758c6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="26" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA ABSEN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement style="Heading 2" x="113" y="0" width="244" height="39" uuid="855a43ea-7693-4b0d-ad24-bc1c9574bd6b"/>
+				<textElement>
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SDIT Islam Nur Muria]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="0" y="0" width="114" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="e97224e9-7aa7-4961-b595-401a84b9825b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="114" y="0" width="114" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="787bd4ee-4da2-486f-b5cd-0ca1288570ea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wali Kelas NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="228" y="0" width="114" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="0e0bec3a-9ab0-4dba-b121-7403804de77c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="342" y="0" width="114" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="77ad535d-28de-45d3-84bf-86855a2329bf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Absen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="456" y="0" width="114" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="1ccbd36c-407a-457a-84eb-15acb549c948"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tidak Absen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="570" y="0" width="114" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="cce73db2-b755-4d24-93ae-acda5bd1266d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Izin/Sakit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="684" y="0" width="118" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="018f2d16-d262-44da-9bc1-8ca947c279ef"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Siswa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="21" width="802" height="1" uuid="34f11b13-6ded-41f5-baed-67bfa47df464"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="114" height="20" uuid="b3a5e9c7-b807-4c8a-b2d3-cb263c1e72fc"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{absen_kd_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="114" height="20" uuid="ea3e79f8-4e87-41b9-a633-96002f448025"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{absen_wali_kelas_nip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="114" height="20" uuid="95e1da02-5885-49e9-9e5b-0ef62b925c4c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kelas_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="114" height="20" uuid="412606e5-b24c-41ae-8def-5deee637260c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{absen_absen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="114" height="20" uuid="5bf66c75-cc32-48c3-9d62-fc8eb54689fb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{absen_tidak_absen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="114" height="20" uuid="e6077ed5-cb7e-4f9e-9b20-a05b3f8d7b03"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{absen_izin_sakit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="118" height="20" uuid="4b6fa938-3e2c-4203-a661-d75c9ffc492e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{absen_total_siswa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="34" width="213" height="20" uuid="2f32ac85-d487-4880-bc80-5dc4b8b20fb1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="34" width="43" height="20" uuid="5f5b7bd8-af6e-4202-aae5-3856ebf65402"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

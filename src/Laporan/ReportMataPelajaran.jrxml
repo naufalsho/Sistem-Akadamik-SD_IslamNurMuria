@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="700e139c-9fe7-461e-9b16-8eabc940453a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<style name="Heading 2" fontName="Arial" fontSize="24" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Field Table" mode="Transparent" hAlign="Center" vAlign="Middle" fontName="Arial" fontSize="11" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     siswa.`nis` AS siswa_nis,
+     siswa.`nama` AS siswa_nama,
+     siswa.`tmp_lahir` AS siswa_tmp_lahir,
+     siswa.`tgl_lahir` AS siswa_tgl_lahir,
+     siswa.`kelas` AS siswa_kelas,
+     siswa.`agama` AS siswa_agama,
+     siswa.`jenis_kel` AS siswa_jenis_kel,
+     siswa.`nama_wali` AS siswa_nama_wali,
+     siswa.`jenis_kel_wali` AS siswa_jenis_kel_wali,
+     siswa.`no_telp_wali` AS siswa_no_telp_wali,
+     siswa.`alamat_wali` AS siswa_alamat_wali,
+     absen.`wali_kelas_nip` AS absen_wali_kelas_nip,
+     absen.`kd_kelas` AS absen_kd_kelas,
+     absen.`absen` AS absen_absen,
+     absen.`tidak_absen` AS absen_tidak_absen,
+     absen.`izin_sakit` AS absen_izin_sakit,
+     absen.`total_siswa` AS absen_total_siswa,
+     kelas.`kd_kelas` AS kelas_kd_kelas,
+     kelas.`kelas` AS kelas_kelas,
+     pelajaran.`kd_mapel` AS pelajaran_kd_mapel,
+     pelajaran.`mapel` AS pelajaran_mapel,
+     nilai.`nis` AS nilai_nis,
+     nilai.`kd_kelas` AS nilai_kd_kelas,
+     nilai.`kd_mapel` AS nilai_kd_mapel,
+     nilai.`tugas_harian` AS nilai_tugas_harian,
+     nilai.`uts` AS nilai_uts,
+     nilai.`uas` AS nilai_uas,
+     nilai.`nilai_akhir` AS nilai_nilai_akhir,
+     nilai.`keterangan` AS nilai_keterangan,
+     guru.`nama` AS guru_nama,
+     guru.`nip` AS guru_nip,
+     guru.`email` AS guru_email,
+     guru.`no_hp` AS guru_no_hp,
+     guru.`alamat` AS guru_alamat,
+     guru.`jenis_kel` AS guru_jenis_kel,
+     guru.`tgl_lahir` AS guru_tgl_lahir,
+     guru.`tmp_lahir` AS guru_tmp_lahir
+FROM
+     `absen` absen INNER JOIN `kelas` kelas ON absen.`kd_kelas` = kelas.`kd_kelas`
+     INNER JOIN `nilai` nilai ON absen.`kd_kelas` = nilai.`kd_kelas`
+     INNER JOIN `guru` guru ON absen.`wali_kelas_nip` = guru.`nip`
+     INNER JOIN `siswa` siswa ON nilai.`nis` = siswa.`nis`
+     INNER JOIN `pelajaran` pelajaran ON nilai.`kd_mapel` = pelajaran.`kd_mapel`]]>
+	</queryString>
+	<field name="siswa_nis" class="java.lang.String"/>
+	<field name="siswa_nama" class="java.lang.String"/>
+	<field name="siswa_tmp_lahir" class="java.lang.String"/>
+	<field name="siswa_tgl_lahir" class="java.lang.String"/>
+	<field name="siswa_kelas" class="java.lang.String"/>
+	<field name="siswa_agama" class="java.lang.String"/>
+	<field name="siswa_jenis_kel" class="java.lang.String"/>
+	<field name="siswa_nama_wali" class="java.lang.String"/>
+	<field name="siswa_jenis_kel_wali" class="java.lang.String"/>
+	<field name="siswa_no_telp_wali" class="java.lang.String"/>
+	<field name="siswa_alamat_wali" class="java.lang.String"/>
+	<field name="absen_wali_kelas_nip" class="java.lang.String"/>
+	<field name="absen_kd_kelas" class="java.lang.String"/>
+	<field name="absen_absen" class="java.lang.String"/>
+	<field name="absen_tidak_absen" class="java.lang.String"/>
+	<field name="absen_izin_sakit" class="java.lang.String"/>
+	<field name="absen_total_siswa" class="java.lang.String"/>
+	<field name="kelas_kd_kelas" class="java.lang.String"/>
+	<field name="kelas_kelas" class="java.lang.String"/>
+	<field name="pelajaran_kd_mapel" class="java.lang.String"/>
+	<field name="pelajaran_mapel" class="java.lang.String"/>
+	<field name="nilai_nis" class="java.lang.String"/>
+	<field name="nilai_kd_kelas" class="java.lang.String"/>
+	<field name="nilai_kd_mapel" class="java.lang.String"/>
+	<field name="nilai_tugas_harian" class="java.lang.Integer"/>
+	<field name="nilai_uts" class="java.lang.Integer"/>
+	<field name="nilai_uas" class="java.lang.Integer"/>
+	<field name="nilai_nilai_akhir" class="java.lang.Double"/>
+	<field name="nilai_keterangan" class="java.lang.String"/>
+	<field name="guru_nama" class="java.lang.String"/>
+	<field name="guru_nip" class="java.lang.String"/>
+	<field name="guru_email" class="java.lang.String"/>
+	<field name="guru_no_hp" class="java.lang.String"/>
+	<field name="guru_alamat" class="java.lang.String"/>
+	<field name="guru_jenis_kel" class="java.lang.String"/>
+	<field name="guru_tgl_lahir" class="java.lang.String"/>
+	<field name="guru_tmp_lahir" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement style="Heading 1" mode="Transparent" x="0" y="14" width="420" height="40" uuid="b4774a8a-e4e6-4c31-8ec3-8d7441a758c6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="26" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA Mata Pelajaran]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement style="Heading 2" x="113" y="0" width="244" height="39" uuid="855a43ea-7693-4b0d-ad24-bc1c9574bd6b"/>
+				<textElement>
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SDIT Islam Nur Muria]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="0" y="0" width="160" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="44c89b2b-3f22-4644-b484-64e8f4b9167e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="160" y="0" width="160" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="6a48eb94-571e-48bf-bc58-9502e0e55863"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Mata Pelajaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="320" y="0" width="160" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="fcc26cc4-3d52-4d42-8567-c286e29116e0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mata Pelajaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="480" y="0" width="160" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="0bc03e9c-4093-479a-8d0f-dde6d398ecf5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Field Table" mode="Opaque" x="640" y="0" width="160" height="34" forecolor="#FFFFFF" backcolor="#FF3333" uuid="d646453f-4d6e-41ef-b24b-c24d5be2a30a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="160" height="20" uuid="c54766f3-db65-44b8-b5bb-0af7713f205f"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guru_nip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="160" height="20" uuid="8d918da8-dd4e-4734-894b-3b72c6e436ec"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pelajaran_kd_mapel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="160" height="20" uuid="c87a1021-97fd-419d-adb8-f970c123c976"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pelajaran_mapel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="160" height="20" uuid="0d17be16-2c80-4f1d-8015-5cc547ec92bb"/>
+				<textElement>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kelas_kd_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="160" height="20" uuid="c3d06b6b-bf8f-4d61-9d56-9bc5fc67cbc7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kelas_kelas}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="22" width="802" height="1" uuid="a73b0532-7b65-4b41-962d-8e6621c83e70"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="34" width="213" height="20" uuid="2f32ac85-d487-4880-bc80-5dc4b8b20fb1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="34" width="43" height="20" uuid="5f5b7bd8-af6e-4202-aae5-3856ebf65402"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
