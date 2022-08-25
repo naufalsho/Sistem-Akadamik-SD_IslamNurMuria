@@ -33,3 +33,65 @@ Sistem Akademik - Tugas Besar Kuliah, Mata Kuliah Pemrograman Visual - Universit
   <img src="/../main/Screenshoot/15.jpg" name="report-MataPelajaran">
   <img src="/../main/Screenshoot/16.jpg" name="report-Nilai">
 </details>
+
+# Spesifikasi Software Yang Digunakan
+* Netbeans IDE 8.0
+* JDK 1.8
+* XAMPP 7.4.28 (Apache, MysQL, PHP & Perl)
+* IReport 5.6.0 (JasperReport Lib Netbeans IDE)
+
+# Manual Book
+1. Impor sd_islamnurmuria.sql, ke phpmyadmin.
+2. Nyalakan Apache dan MySQL di XAMPP, Buka/Jalankan projek aplikasi
+3. •	Login
+Login – dengan username dan password = harus sama pada data yang ada di form Admin
+4. •	Form Admin
+Disinilah data untuk, siapa yang bisa masuk kedalam apps SD_IslamNurMuria, dan juga disini bisa, Membuat baru, Mengedit, dan Menghapus, untuk datanya.
+5. •	DashBoard(Menu Utama) / Tampilan Awal(setelah Login)
+Terdapat Menu Navigasi Dibagian Kiri, dan Juga isi dashboard mengenai Informasi Sekolah, dan juga ada Tanggal, waktu.
+6. •	Form Guru (setelah klik Pada Menu)
+  a.	Dipanel dashboard, akan terganti dengan form guru, yang diharapkan, user untuk mengisi data Guru pada Sekolah SD Islam Nur Muria.
+  b.  Setelah Disimpan – akan muncul setelelahnya data pada Table dibawahnya.
+  c.	Di Form ini, terdapat Simpan, Hapus, Delete, Edit. Yang terhubung dengan Data Database.
+  d.	Pada NIP disini, merupakan Primary Key(yang artinya tidak bisa menambahkan dengan data/nilai yang sama yang telah ada di data database).
+  e.	Dan NIP ini terhubung pada relasi Form Absen, dimana Form Absen mengambil datanya(nip) dari Form Guru ini.  
+7. •	Form Absen
+Disini, User Bisa, MengInput(simpan), Edit, Hapus, pada data yang tersedia pada database,
+Dan juga ada table yang bisa melihat datanya secara langsung dari database. 
+  a.	Inputan, pada Wali Kelas NIP, hanya bisa memilih dari NIP, yang tersedia pada data database form Guru, karena form ini terhubung dengan form Guru.
+  b.	Kode Kelas disini merupakan Primary Key(tidak bisa diinputkan dengan data yang sama), dan juga Kode Kelas pada Form absen iini Terhubung dengan 
+      relasi 2 Form : 1. Form Kelas, 2. Transaksi Nilai.
+      Jadinya, Kode Kelas pada form yang Terhubung hanya bisa memilih dari data yang tersedia pada form disini form absen.
+8. •	Form Kelas
+Ini merupakan, form Kelas(tidak Ada Primary Key), yang terhubung dengan Form Absen pada data Kode Kelas, jadinya hanya memilih Kode Kelas yang tersedia pada data Form absen.
+9. •	Form Pelajaran
+Form ini, Memiliki Primary Key Kode Pelajaran, yang terhubung pada Transaksi Nilai, jadinya pada Nilai hanya memilih data Kode Pelajaran, hanya yang tersedia pada Form disini. Sedangkan Data Mata Pelajaran, diinputkan secara Manual : contoh Bahasa Indonesia, dsb.
+10. •	Form Siswa
+NIS Merupakan Primary Key yang terhungung dengan Transaksi Nilai, Jadinya Apa yang DiInputkan NIS pada form ini, di Form Nilai memilih NIS yang Tersedia disini.
+11. •	Transaksi Nilai
+Form Ini, tidak ada Primary key, tetapi Form Ini terhubung, 3 Form :
+  1.	NIS pada Form Siswa
+  2.	Kode Kelas pada Form Absen
+  3.	Kode Pelajaran pada Form Pelajaran/Mata Pelajaran
+Jadinya, Hanya bisa Memilih Data yang tersedia Pada Form Yang Terhubung.
+12. •	Proses Perhitungan pada Transaksi Nilai
+Aturannya/Rule :
+Jadinya Nilai Akhir dan  Keterangan  akan Muncul  Setelah diInput/edit,
+Prosesnya : 
+Mendapatkan Nilai Akhir = 20%(tugas Harian) x 30%(UTS) x 50%(UAS)
+ Keteragan = 
+  1.	Kalau Nilai Akhir 0 s/d 44 akan Dinyatakan Tidak Lulus
+  2.	Kalau Nilai Akhir 45 s/d 75 Akan dinyatakan Remedial
+  3.	Kalai Nilai Akhir 76 s/d 100 Akan Dinyatakan LULUS.
+12. Report/Laporan
+Merupakan Hasil Keluaran atau Hasil Proses program.
+
+
+# Author
+* Naufal Sholahuddin
+* Bama Al Farhan N
+* Wanju Bonardo A
+* Ammar Baghiz F
+* Yoga Pramata
+* Sakti Nurfadillah
+* Akbar Dul Raya
