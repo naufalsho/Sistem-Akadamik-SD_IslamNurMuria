@@ -1,7 +1,7 @@
 # Sistem-Akadamik-SD_IslamNurMuria
 Sistem Akademik - Tugas Besar Kuliah, Mata Kuliah Pemrograman Visual - Universitas Indraprasta PGRI
 
-# Screnshoot Aplikasi
+# Screenshot Aplikasi
 <details>
   <summary>Login & SignUp</summary>
   <img src="/../main/Screenshoot/1.jpg" name="login">
