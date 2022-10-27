@@ -90,6 +90,6 @@ Sistem Akademik - Tugas Besar Kuliah, Mata Kuliah Pemrograman Visual - Universit
 * Bama Al Farhan N
 * Wanju Bonardo A
 * Ammar Baghiz F
-* Yoga Pramata
+* Yoga Pratama
 * Sakti Nurfadillah
 * Akbar Dul Raya
